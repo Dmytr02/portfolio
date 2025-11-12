@@ -1280,7 +1280,8 @@
             }
 
                 .image-component > .frame > img {
-                    border-radius: 0 !important;
+                    border-radius: 0% !important;
+                    border-bottom-left-radius: 50px !important;
                     max-width: 100%;
                     vertical-align: top;
                     width: inherit;
@@ -2055,6 +2056,13 @@
             animation-timing-function: linear;
             animation-direction: reverse;
         }
+        .imageRotateble img {
+            transition: 0.5s ease-in-out !important;
+            transform: translate(0, -200px) rotate(0) translate(0, 200px) !important;
+        }
+            .imageRotateble img:hover {
+                transform: translate(0, -200px) rotate(-90deg) translate(0, 200px) !important;
+            }
     </style>
 	<noscript>
 		<style>
@@ -2165,7 +2173,7 @@
 					<div class="wrapper">
 						<div class="inner" data-onvisible-trigger="1">
 							<div id="image01" class="image-component instance-1 style-1 full" data-position="center" style="opacity: 0;">
-								<span class="frame">
+								<span class="frame imageRotateble">
 									<img src="image1.png" alt="">
 								</span>
 							</div>
