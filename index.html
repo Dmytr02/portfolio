@@ -640,20 +640,25 @@
             padding: 0;
             position: relative;
             width: 100%;
+            height: 1.375rem;
+            background-size: auto 118.85%;
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%3Cstyle%3Epath%20%7Bfill%3A%20none%3Bstroke-width%3A%205px%3Bstroke%3A%20%23EBC98F%3Bvector-effect%3A%20non-scaling-stroke%3B%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M0%2C320c128%2C0%2C128-128%2C256-128s128%2C128%2C256%2C128%22%20%2F%3E%3C%2Fsvg%3E');
+            background-position: center center;
+            background-repeat: repeat-x;
         }
 
             .divider-component::before {
                 content: '';
             }
 
-            .divider-component.style-1::before {
+            /*.divider-component.style-1::before {
                 width: 100%;
                 height: 1.375rem;
                 background-size: auto 118.85%;
                 background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%3Cstyle%3Epath%20%7Bfill%3A%20none%3Bstroke-width%3A%205px%3Bstroke%3A%20%23EBC98F%3Bvector-effect%3A%20non-scaling-stroke%3B%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M0%2C320c128%2C0%2C128-128%2C256-128s128%2C128%2C256%2C128%22%20%2F%3E%3C%2Fsvg%3E');
                 background-position: center center;
                 background-repeat: repeat-x;
-            }
+            }*/
 
             .divider-component.style-2:not(:first-child) {
                 margin-top: 0rem !important;
@@ -2029,6 +2034,27 @@
         .header-text {
             text-decoration: none !important;
         }
+        @keyframes my-animation{
+            0% {
+                background-position: 0
+            }
+            100% {
+                background-position: 3.3rem
+            }
+        }
+        .my-animated {
+            animation-name: my-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .my-animated-revers {
+            animation-name: my-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: reverse;
+        }
     </style>
 	<noscript>
 		<style>
@@ -2086,7 +2112,7 @@
 	<div class="site-wrapper">
 		<div class="site-main">
 			<div class="inner">
-				<hr id="divider06" class="divider-component instance-6 style-2">
+				<hr id="divider06" class="my-animated divider-component instance-6 style-2" style="background-image: none !important">
 				<div id="container07" class="sticky-element container-component instance-7 columns full screen">
 					<div class="wrapper">
                         <div class="inner" data-onvisible-trigger="1">
@@ -2118,7 +2144,7 @@
 						<div class="inner" data-onvisible-trigger="1">
 							<p id="text01" class="text-component instance-1 style-5" style="opacity: 1; transform: none;">Augue dictum felis</p>
 							<h2 id="text02" class="text-component instance-2 style-1" style="opacity: 1; transform: none;">Dmytro Havryliuk</h2>
-							<hr id="divider01" class="divider-component instance-1 style-1 full screen" style="opacity: 1; transform-origin: 50% 50%; transform: none;">
+							<hr id="divider01" class="my-animated divider-component instance-1 style-1 full screen" style="opacity: 1; transform-origin: 50% 50%; transform: none;">
                             <p id="text09" class="text-component instance-9 style-3" style="opacity: 1; transform: none;">I am a beginner game developer specializing in Unity and C#. Game development is my passion – I am fascinated by combining technology with creativity and building engaging gameplay systems. During my studies, I worked on several team projects, where I was responsible for programming mechanics, UI systems, and code optimization. I value clean, modular code and good communication within the team. I am looking for a place where I can continue to develop as a gameplay programmer and work on projects that truly engage players. I would be happy to tell you more and show you the results of my work.</p>
 							<ul id="buttons03" class="buttons-component instance-3 style-1" style="opacity: 1; transform: none;">
 								<li>
@@ -2134,8 +2160,8 @@
 						</div>
 					</div>
 				</div>
-				<hr id="divider10" class="divider-component instance-10 style-2">
-				<div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0" data-scroll-speed="2" data-scroll-invisible="1" class="container-component instance-1 style-2 default">
+				<!--<hr id="divider10" class="divider-component instance-10 style-2">-->
+				<div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0" data-scroll-speed="2" data-scroll-invisible="1" class="container-component instance-1 style-2 default" style="margin-top: 100px !important">
 					<div class="wrapper">
 						<div class="inner" data-onvisible-trigger="1">
 							<div id="image01" class="image-component instance-1 style-1 full" data-position="center" style="opacity: 0;">
@@ -2144,7 +2170,7 @@
 								</span>
 							</div>
 							<h2 id="text04" class="text-component instance-4 style-2" style="opacity: 0; transform: translateY(0.6375rem);">BrainInc</h2>
-							<hr id="divider02" class="divider-component instance-2 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+							<hr id="divider02" class="my-animated-revers divider-component instance-2 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
 							<p id="text03" class="text-component instance-3 style-4" style="opacity: 0; transform: translateY(1.425rem);">
 								<strong>
                                     <span style="color: #ebc98f">Game description</span>
@@ -2165,8 +2191,8 @@
 						</div>
 					</div>
 				</div>
-				<hr id="divider07" class="divider-component instance-7 style-2">
-				<div id="container04" class="container-component instance-4 style-2 default">
+				<!--<hr id="divider07" class="divider-component instance-7 style-2">-->
+				<div id="container04" class="container-component instance-4 style-2 default" style="margin-top: 100px !important">
 					<div class="wrapper">
 						<div class="inner" data-onvisible-trigger="1">
 							<div id="image02" class="image-component instance-2 style-1 full" data-position="center" style="opacity: 0;">
@@ -2175,7 +2201,7 @@
 								</span>
 							</div>
 							<h2 id="text11" class="text-component instance-11 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Balls</h2>
-							<hr id="divider04" class="divider-component instance-4 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+							<hr id="divider04" class="my-animated divider-component instance-4 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
 							<p id="text05" class="text-component instance-5 style-4" style="opacity: 0; transform: translateY(1.425rem);">
 								<strong>
                                     <span style="color: #ebc98f">Game description</span>
@@ -2196,8 +2222,8 @@
 						</div>
 					</div>
 				</div>
-				<hr id="divider08" class="divider-component instance-8 style-2">
-				<div id="container05" class="container-component instance-5 style-2 default">
+				<!--<hr id="divider08" class="divider-component instance-8 style-2">-->
+				<div id="container05" class="container-component instance-5 style-2 default" style="margin-top: 100px !important">
 					<div class="wrapper">
 						<div class="inner" data-onvisible-trigger="1">
 							<div id="image04" class="image-component instance-4 style-1 full" data-position="center" style="opacity: 0;">
@@ -2206,7 +2232,7 @@
 								</span>
 							</div>
 							<h2 id="text17" class="text-component instance-17 style-2" style="opacity: 0; transform: translateY(0.6375rem);">WerehouseCoop</h2>
-							<hr id="divider05" class="divider-component instance-5 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+							<hr id="divider05" class="my-animated-revers divider-component instance-5 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
 							<p id="text10" class="text-component instance-10 style-4" style="opacity: 0; transform: translateY(1.425rem);">
 								<strong>
                                     <span style="color: #ebc98f">Game description</span>
@@ -2227,16 +2253,16 @@
 						</div>
 					</div>
 				</div>
-				<hr id="divider09" class="divider-component instance-9 style-2">
-				<div id="container03" data-scroll-id="contact" class="container-component instance-3 style-2 default">
+				<!--<hr id="divider09" class="divider-component instance-9 style-2">-->
+				<div id="container03" data-scroll-id="contact" class="container-component instance-3 style-2 default" style="margin-top: 100px !important">
 					<div class="wrapper">
 						<div class="inner" data-onvisible-trigger="1">
 							<h2 id="text06" class="text-component instance-6 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Ornare cep metus nullam urna?</h2>
-							<hr id="divider03" class="divider-component instance-3 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+							<hr id="divider03" class="my-animated divider-component instance-3 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
 							<p id="text08" class="text-component instance-8 style-3" style="opacity: 0; transform: translateY(1.425rem);">Pretium nulla sed aliquet nec. Praesent varius pulvinar vivamus feugiat est duis. Metus lacinia et pretium urna lectus primis.</p>
 							<ul id="buttons05" class="buttons-component instance-5 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
 								<li>
-									<a href="mailto:user@domain.ext" class="n01" role="button">
+									<a href="mailto:dhavryliuk@edu.cdv.pl" class="n01" role="button">
 										<svg aria-labelledby="buttons05-icon-1-title">
 											<title id="buttons05-icon-1-title">Email (Alt)</title>
 											<use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
