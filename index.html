@@ -2104,6 +2104,7 @@
             }*/
         #image-container {
             position: relative !important;
+            transition: height 0.5s ease-in-out;
         }
 
         .fade-img {
@@ -2230,9 +2231,9 @@
 					<div class="wrapper">
                         <div class="inner" data-onvisible-trigger="1">
                             <div id="image01" class="image-component instance-1 style-1 full" data-position="center" style="opacity: 0;">
-                                <span class="frame">
-                                    <div id="change-button">
-                                        <div id="image-container">
+                                <span class="frame" style="height: auto">
+                                    <div id="change-button" style="height: auto">
+                                        <div id="image-container" style="height: 300px">
                                             <img src="image1.png" class="fade-img active">
                                             <img src="image1_1.png" class="fade-img">
                                             <img src="image1_2.png" class="fade-img">
