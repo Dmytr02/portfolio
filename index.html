@@ -2177,7 +2177,7 @@
 		<div class="site-main">
 			<div class="inner">
 				<hr id="divider06" class="my-animated divider-component instance-6 style-2" style="background-image: none !important">
-				<div id="container07" class="sticky-element container-component instance-7 columns full screen">
+				<div id="container07" class="sticky-element responsive container-component instance-7 columns full screen">
 					<div class="wrapper">
                         <div class="inner" data-onvisible-trigger="1">
                             <div>
@@ -2445,6 +2445,47 @@
 			</div>
 		</div>
 	</div>
+    <script>
+        window.addEventListener("resize", function () {
+            var w = window.innerWidth;
+            console.log(w)
+            var responsiveDiv = document.querySelectorAll('.responsive');
+
+            responsiveDiv.forEach((element) => {
+                console.log(element)
+                if (w < 737) {
+                    element.classList.remove("sticky-element");
+                    element.classList.add("mobile");
+                    console.log("desktop Remove");
+                } else {
+                    element.classList.remove("mobile");
+                    element.classList.add("sticky-element");
+
+                    console.log("mobile removed");
+                }
+
+            })
+
+        });
+        var w = window.innerWidth;
+        console.log(w)
+        var responsiveDiv = document.querySelectorAll('.responsive');
+
+        responsiveDiv.forEach((element) => {
+            console.log(element)
+            if (w < 737) {
+                element.classList.remove("sticky-element");
+                element.classList.add("mobile");
+                console.log("desktop Remove");
+            } else {
+                element.classList.remove("mobile");
+                element.classList.add("sticky-element");
+
+                console.log("mobile removed");
+            }
+
+        })
+    </script>
     <script>
         const container = document.getElementById('image-container');
         const images = container.querySelectorAll('.fade-img');
