@@ -631,6 +631,21 @@
                     margin-top: 1rem;
                 }
 
+        .my-divider-component {
+            align-items: center;
+            border: 0;
+            display: flex;
+            justify-content: var(--flex-alignment);
+            min-height: 1rem;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            height: 5rem;
+            background-size: auto 90%;
+            background-image: url('icons.png');
+            background-position: center center;
+            background-repeat: repeat-x;
+        }
         .divider-component {
             align-items: center;
             border: 0;
@@ -640,20 +655,26 @@
             padding: 0;
             position: relative;
             width: 100%;
+            height: 1.375rem;
+            background-size: auto 118.85%; 
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%3Cstyle%3Epath%20%7Bfill%3A%20none%3Bstroke-width%3A%205px%3Bstroke%3A%20%23EBC98F%3Bvector-effect%3A%20non-scaling-stroke%3B%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M0%2C320c128%2C0%2C128-128%2C256-128s128%2C128%2C256%2C128%22%20%2F%3E%3C%2Fsvg%3E');
+            /*background-image: icons.png;*/
+            background-position: center center;
+            background-repeat: repeat-x;
         }
 
             .divider-component::before {
                 content: '';
             }
 
-            .divider-component.style-1::before {
+            /*.divider-component.style-1::before {
                 width: 100%;
                 height: 1.375rem;
                 background-size: auto 118.85%;
                 background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%3Cstyle%3Epath%20%7Bfill%3A%20none%3Bstroke-width%3A%205px%3Bstroke%3A%20%23EBC98F%3Bvector-effect%3A%20non-scaling-stroke%3B%7D%3C%2Fstyle%3E%3Cpath%20d%3D%22M0%2C320c128%2C0%2C128-128%2C256-128s128%2C128%2C256%2C128%22%20%2F%3E%3C%2Fsvg%3E');
                 background-position: center center;
                 background-repeat: repeat-x;
-            }
+            }*/
 
             .divider-component.style-2:not(:first-child) {
                 margin-top: 0rem !important;
@@ -938,12 +959,15 @@
                 .container-component.instance-7 > .wrapper > .inner > :nth-child(1) {
                     width: calc(25% + (var(--gutters) / 4));
                 }
+
                 .container-component.instance-7 > .wrapper > .inner > :nth-child(2) {
                     width: calc(25% + (var(--gutters) / 4));
                 }
+
                 .container-component.instance-7 > .wrapper > .inner > :nth-child(3) {
                     width: calc(25% + (var(--gutters) / 4));
                 }
+
                 .container-component.instance-7 > .wrapper > .inner > :nth-child(4) {
                     width: calc(25% + (var(--gutters) / 4));
                 }
@@ -1275,7 +1299,8 @@
             }
 
                 .image-component > .frame > img {
-                    border-radius: 0 !important;
+                    border-radius: 0% !important;
+                    border-bottom-left-radius: 50px !important;
                     max-width: 100%;
                     vertical-align: top;
                     width: inherit;
@@ -2029,6 +2054,72 @@
         .header-text {
             text-decoration: none !important;
         }
+
+        @keyframes my-animation {
+            0% {
+                background-position: 0
+            }
+
+            100% {
+                background-position: 3.3rem
+            }
+        }
+
+        @keyframes my-animation-2 {
+            0% {
+                background-position: 0
+            }
+
+            100% {
+                background-position: 1025px
+            }
+        }
+
+        .my-animated {
+            animation-name: my-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .my-animated-2 {
+            animation-name: my-animation-2;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        .my-animated-revers {
+            animation-name: my-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-direction: reverse;
+        }
+        /*.imageRotateble img {
+            transition: 0.5s ease-in-out !important;
+            transform: translate(0, -200px) rotate(0) translate(0, 200px) !important;
+        }
+            .imageRotateble img:hover {
+                transform: translate(0, -200px) rotate(-90deg) translate(0, 200px) !important;
+            }*/
+        #image-container {
+            position: relative !important;
+            transition: height 0.5s ease-in-out;
+        }
+
+        .fade-img {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            max-width: 100% !important;
+            height: auto !important;
+            opacity: 0 !important;
+            transition: opacity 0.5s ease-in-out !important; /* Плавность! */
+        }
+
+            .fade-img.active {
+                opacity: 1 !important;
+            }
     </style>
 	<noscript>
 		<style>
@@ -2085,10 +2176,10 @@
 	</svg>
 	<div class="site-wrapper">
 		<div class="site-main">
-			<div class="inner">
-				<hr id="divider06" class="divider-component instance-6 style-2">
-				<div id="container07" class="sticky-element container-component instance-7 columns full screen">
-					<div class="wrapper">
+            <div class="inner">
+                <hr id="divider06" class="my-animated divider-component instance-6 style-2" style="background-image: none !important">
+                <div id="container07" class="sticky-element responsive container-component instance-7 columns full screen">
+                    <div class="wrapper">
                         <div class="inner" data-onvisible-trigger="1">
                             <div>
                                 <p id="text15" class="text-component instance-15 style-6" style="opacity: 1; transform: none;">
@@ -2102,214 +2193,353 @@
                             </div>
                             <div>
                                 <p id="text14" class="text-component instance-14 style-6" style="opacity: 1; transform: none;">
-                                    <a href="#contact" class="header-text">contact</a>
+                                    <a href="#contact" class="header-text">Kontakt</a>
                                 </p>
                             </div>
                             <div>
                                 <p id="text14" class="text-component instance-14 style-6" style="opacity: 1; transform: none;">
-                                    <a href="index.html" class="header-text">english</a>
+                                    <a href="index.html" class="header-text">english <img src="language-icon.png" style="max-width: 1.6875rem; transform: translateY(0.5rem) "></a>
                                 </p>
                             </div>
                         </div>
-					</div>
-				</div>
-				<div id="container06" data-scroll-id="home" class="container-component instance-6 style-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<p id="text01" class="text-component instance-1 style-5" style="opacity: 1; transform: none;">Augue dictum felis</p>
-							<h2 id="text02" class="text-component instance-2 style-1" style="opacity: 1; transform: none;">Dmytro Havryliuk</h2>
-							<hr id="divider01" class="divider-component instance-1 style-1 full screen" style="opacity: 1; transform-origin: 50% 50%; transform: none;">
-							<p id="text09" class="text-component instance-9 style-3" style="opacity: 1; transform: none;">Jestem początkującym programistą gier, który specjalizuje się w Unity i języku C#. Tworzenie gier to moja pasja – fascynuje mnie łączenie technologii z kreatywnością i budowanie angażujących systemów gameplayowych. Podczas studiów realizowałem kilka projektów zespołowych, w których odpowiadałem za programowanie mechanik, systemów UI i optymalizację kodu. Cenię sobie czysty, modularny kod i dobrą komunikację w zespole. Szukam miejsca, gdzie mógłbym dalej rozwijać się jako gameplay programmer i pracować nad projektami, które naprawdę angażują graczy. Chętnie opowiem więcej i pokażę efekty mojej pracy.</p>
-							<ul id="buttons03" class="buttons-component instance-3 style-1" style="opacity: 1; transform: none;">
-								<li>
-									<a href="#start" class="n01" role="button">
-										<svg aria-labelledby="buttons03-icon-1-title">
-											<title id="buttons03-icon-1-title">Arrow Down (Light)</title>
-											<use xlink:href="#icon-8a75e9205b2d7697ad826d592ebf05f0"></use>
-										</svg>
-										<span class="label">My Work</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<hr id="divider10" class="divider-component instance-10 style-2">
-				<div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0" data-scroll-speed="2" data-scroll-invisible="1" class="container-component instance-1 style-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<div id="image01" class="image-component instance-1 style-1 full" data-position="center" style="opacity: 0;">
-								<span class="frame">
-									<img src="image1.png" alt="">
-								</span>
-							</div>
-							<h2 id="text04" class="text-component instance-4 style-2" style="opacity: 0; transform: translateY(0.6375rem);">BrainInc</h2>
-							<hr id="divider02" class="divider-component instance-2 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
-							<p id="text03" class="text-component instance-3 style-4" style="opacity: 0; transform: translateY(1.425rem);">
-								<strong>
-									<span style="color: #ebc98f">Opis gry</span>
-								</strong>
-							</p>
-							<p id="text07" class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">Wcielasz się w pracownika niezwykłego urzędu znajdującego się wewnątrz ludzkiego mózgu. Twoim zadaniem jest kontrolowanie napływających produktów – analizujesz ich „dokumentację”, oceniasz wartość odżywczą i wpływ na organizm, po czym decydujesz, które z nich mogą zostać dopuszczone, a które trzeba odrzucić. Gra łączy elementy symulatora biologicznego i mechanikę point &amp; click, tworząc satyryczną wizję biurokracji ciała człowieka.</p>
-							<ul id="buttons01" class="buttons-component instance-1 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
-								<li>
-									<a href="https://dmytrohavryliuk.carrd.co/#" class="n01" role="button">
-										<svg aria-labelledby="buttons01-icon-1-title">
-											<title id="buttons01-icon-1-title">Arrow Right (Light)</title>
-											<use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-										</svg>
-										<span class="label">Learn More</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<hr id="divider07" class="divider-component instance-7 style-2">
-				<div id="container04" class="container-component instance-4 style-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<div id="image02" class="image-component instance-2 style-1 full" data-position="center" style="opacity: 0;">
-								<span class="frame">
-									<img src="image2.png" alt="">
-								</span>
-							</div>
-							<h2 id="text11" class="text-component instance-11 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Balls</h2>
-							<hr id="divider04" class="divider-component instance-4 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
-							<p id="text05" class="text-component instance-5 style-4" style="opacity: 0; transform: translateY(1.425rem);">
-								<strong>
-									<span style="color: #ebc98f">Opis gry</span>
-								</strong>
-							</p>
-							<p id="text12" class="text-component instance-12 style-3" style="opacity: 0; transform: translateY(1.425rem);">Gracz steruje przesuwaną ścianą, która oddziela dwa obszary. Za pomocą tej ściany z dziurką, gracz ma za zadanie przesuwać kulki, które nieustannie przelatują przez otwór. Każda kulka ma przypisany kolor i musi trafić na teren odpowiadający jej barwie. W miarę postępu gry tempo przyspiesza, a liczba kulek rośnie, co wymaga coraz szybszych reakcji i precyzyjnych ruchów.</p>
-							<ul id="buttons06" class="buttons-component instance-6 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
-								<li>
-									<a href="https://dmytrohavryliuk.carrd.co/#" class="n01" role="button">
-										<svg aria-labelledby="buttons06-icon-1-title">
-											<title id="buttons06-icon-1-title">Arrow Right (Light)</title>
-											<use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-										</svg>
-										<span class="label">Learn More</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<hr id="divider08" class="divider-component instance-8 style-2">
-				<div id="container05" class="container-component instance-5 style-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<div id="image04" class="image-component instance-4 style-1 full" data-position="center" style="opacity: 0;">
-								<span class="frame">
-									<img src="image3.png" alt="">
-								</span>
-							</div>
-							<h2 id="text17" class="text-component instance-17 style-2" style="opacity: 0; transform: translateY(0.6375rem);">WerehouseCoop</h2>
-							<hr id="divider05" class="divider-component instance-5 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
-							<p id="text10" class="text-component instance-10 style-4" style="opacity: 0; transform: translateY(1.425rem);">
-								<strong>
-									<span style="color: #ebc98f">Opis gry</span>
-								</strong>
-							</p>
-							<p id="text18" class="text-component instance-18 style-3" style="opacity: 0; transform: translateY(1.425rem);">WarehouseCoop to dynamiczna gra kooperacyjna, w której zespół graczy wciela się w pracowników dużego magazynu. Waszym zadaniem jest rozładowywanie, sortowanie i wysyłanie paczek we właściwe miejsca, zachowując porządek w stale rosnącym chaosie!</p>
-							<ul id="buttons04" class="buttons-component instance-4 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
-								<li>
-									<a href="https://dmytrohavryliuk.carrd.co/#" class="n01" role="button">
-										<svg aria-labelledby="buttons04-icon-1-title">
-											<title id="buttons04-icon-1-title">Arrow Right (Light)</title>
-											<use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
-										</svg>
-										<span class="label">Learn More</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<hr id="divider09" class="divider-component instance-9 style-2">
-				<div id="container03" data-scroll-id="contact" class="container-component instance-3 style-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<h2 id="text06" class="text-component instance-6 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Ornare cep metus nullam urna?</h2>
-							<hr id="divider03" class="divider-component instance-3 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
-							<p id="text08" class="text-component instance-8 style-3" style="opacity: 0; transform: translateY(1.425rem);">Pretium nulla sed aliquet nec. Praesent varius pulvinar vivamus feugiat est duis. Metus lacinia et pretium urna lectus primis.</p>
-							<ul id="buttons05" class="buttons-component instance-5 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
-								<li>
-									<a href="mailto:user@domain.ext" class="n01" role="button">
-										<svg aria-labelledby="buttons05-icon-1-title">
-											<title id="buttons05-icon-1-title">Email (Alt)</title>
-											<use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
-										</svg>
-										<span class="label">Get In Touch</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="container02" class="container-component instance-2 default">
-					<div class="wrapper">
-						<div class="inner" data-onvisible-trigger="1">
-							<ul id="icons01" class="icons-component instance-1 style-1">
-								<li style="opacity: 0; transform: translateY(1.6875rem);">
-									<a class="n01" href="https://dmytrohavryliuk.carrd.co/#" role="button">
-										<svg aria-labelledby="icons01-icon-1-title">
-											<title id="icons01-icon-1-title">X</title>
-											<use xlink:href="#icon-31b8880d36499db40d4e47546c4763f3"></use>
-										</svg>
-										<span class="label">X</span>
-									</a>
-								</li>
-								<li style="opacity: 0; transform: translateY(1.6875rem);">
-									<a class="n02" href="https://dmytrohavryliuk.carrd.co/#" role="button">
-										<svg aria-labelledby="icons01-icon-2-title">
-											<title id="icons01-icon-2-title">Instagram</title>
-											<use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
-										</svg>
-										<span class="label">Instagram</span>
-									</a>
-								</li>
-								<li style="opacity: 0; transform: translateY(1.6875rem);">
-									<a class="n03" href="https://dmytrohavryliuk.carrd.co/#" role="button">
-										<svg aria-labelledby="icons01-icon-3-title">
-											<title id="icons01-icon-3-title">Facebook</title>
-											<use xlink:href="#icon-a1eb5cac0cee3b05a40d856c98ce14a5"></use>
-										</svg>
-										<span class="label">Facebook</span>
-									</a>
-								</li>
-								<li style="opacity: 0; transform: translateY(1.6875rem);">
-									<a class="n04" href="https://dmytrohavryliuk.carrd.co/#" role="button">
-										<svg aria-labelledby="icons01-icon-4-title">
-											<title id="icons01-icon-4-title">TikTok</title>
-											<use xlink:href="#icon-694b338299bf630d8d2ec9bd42d31dbe"></use>
-										</svg>
-										<span class="label">TikTok</span>
-									</a>
-								</li>
-								<li style="opacity: 0; transform: translateY(1.6875rem);">
-									<a class="n05" href="sms:0000000000" role="button">
-										<svg aria-labelledby="icons01-icon-5-title">
-											<title id="icons01-icon-5-title">Message</title>
-											<use xlink:href="#icon-3dc53231f6592396154e494d0058130c"></use>
-										</svg>
-										<span class="label">Message</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div><!--
-				<div id="credits">
-					<span>
-						<a href="https://carrd.co/build?ref=auto">Made with Carrd</a>
-					</span>
-				</div>-->
-			</div>
+                    </div>
+                </div>
+                <div id="container06" data-scroll-id="home" class="container-component instance-6 style-2 default">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <p id="text01" class="text-component instance-1 style-5" style="opacity: 1; transform: none;">O mnie</p>
+                            <h2 id="text02" class="text-component instance-2 style-1" style="opacity: 1; transform: none;">Dmytro Havryliuk</h2>
+                            <hr id="divider01" class="my-animated-2 my-divider-component instance-1 style-1 full screen" style="opacity: 1; transform-origin: 50% 50%; transform: none;">
+                            <!--<hr id="divider01" class="my-animated divider-component instance-1 style-1 full screen" style="opacity: 1; transform-origin: 50% 50%; transform: none;">-->
+                            <p id="text09" class="text-component instance-9 style-3" style="opacity: 1; transform: none;">Jestem początkującym twórcą gier specjalizującym się w Unity i C#. Tworzenie gier to moja pasja – fascynuje mnie łączenie technologii z kreatywnością i budowanie angażujących systemów rozgrywki. Podczas studiów pracowałem nad kilkoma projektami zespołowymi, gdzie byłem odpowiedzialny za programowanie mechaniki, systemów UI i optymalizację kodu. Cenię czysty, modułowy kod i dobrą komunikację w zespole. Szukam miejsca, w którym będę mógł dalej rozwijać się jako programista rozgrywki i pracować nad projektami, które naprawdę angażują graczy. Chętnie opowiem więcej i pokażę efekty mojej pracy.</p>
+                            <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                <span style="color: #ebc98f">Technologie, z którymi pracowałem:</span>
+                            </p>                          
+                            <p id="text09" class="text-component instance-9 style-3" style="opacity: 1; transform: none;">Unity Engine<br>UI systems <br>shader graph <br>C# <br>FishNet <br>FMOD</p>
+                            <ul id="buttons03" class="buttons-component instance-3 style-1" style="opacity: 1; transform: none;">
+                                <li>
+                                    <a href="#start" class="n01" role="button">
+                                        <svg aria-labelledby="buttons03-icon-1-title">
+                                            <title id="buttons03-icon-1-title">Arrow Down (Light)</title>
+                                            <use xlink:href="#icon-8a75e9205b2d7697ad826d592ebf05f0"></use>
+                                        </svg>
+                                        <span class="label">Moje prace</span>
+                                        <a href="CV.pdf" class="n01" role="button" style="margin: 20px;">
+                                            <img src="cvIcon.png" style="max-block-size: 35px; transform: translate(25%, 0)">
+                                            <span class="label">Pobierz CV</span>
+                                            <!--<img style="max-width: 20px; height: auto; display:block" src="cvIcon.png">-->
+                                        </a>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<hr id="divider10" class="divider-component instance-10 style-2">-->
+                <h1 style="font-size: 3em;font-style:oblique;text-shadow: 0 0 black;margin: 25%;">Projekty</h1>
+                <div id="container01" data-scroll-id="start" data-scroll-behavior="center" data-scroll-offset="0" data-scroll-speed="2" data-scroll-invisible="1" class="container-component instance-1 style-2 default" style="margin-top: 100px !important">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <div id="image01" class="image-component instance-1 style-1 full" data-position="center" style="opacity: 0;">
+                                <span class="frame" style="height: auto">
+                                    <div id="change-button" style="height: auto">
+                                        <div id="image-container" style="height: 300px">
+                                            <img src="image1.png" class="fade-img active">
+                                            <img src="image1_1.png" class="fade-img">
+                                            <img src="image1_2.png" class="fade-img">
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <h2 id="text04" class="text-component instance-4 style-2" style="opacity: 0; transform: translateY(0.6375rem);">BrainInc</h2>
+                            <hr id="divider02" class="my-animated-revers divider-component instance-2 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+                            <p id="text03" class="text-component instance-3 style-4" style="opacity: 0; transform: translateY(1.425rem);">
+                                <strong>
+                                    <span style="color: #ebc98f">Opis gry</span>
+                                </strong>
+                            </p>
+                            <p id="text07" class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">Wcielasz się w rolę pracownika niezwykłego biura znajdującego się w ludzkim mózgu. Twoim zadaniem jest kontrolowanie napływających produktów – analizujesz ich „dokumentację”, oceniasz ich wartość odżywczą i wpływ na organizm, a następnie decydujesz, które z nich można zatwierdzić, a które należy odrzucić. Gra łączy elementy symulatora biologicznego i mechaniki typu „wskaż i kliknij”, tworząc satyryczną wizję biurokracji ludzkiego ciała.</p>
+
+                            <ul id="buttons01" class="buttons-component instance-1 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">narzędzia:</span> <br>Unity <br>FMOD
+                                    </p>
+                                </li>
+                                <li style="width: 20%"></li>
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">rola:</span><br>
+                                        Programer
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul id="buttons01" class="buttons-component instance-1 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <a href="https://dmytrohavryliuk.itch.io/braininc" class="n01" role="button">
+                                        <svg aria-labelledby="buttons01-icon-1-title">
+                                            <title id="buttons01-icon-1-title">Arrow Right (Light)</title>
+                                            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                        </svg>
+                                        <span class="label">Dowiedz się więcej</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<hr id="divider07" class="divider-component instance-7 style-2">-->
+                <div id="container04" class="container-component instance-4 style-2 default" style="margin-top: 100px !important">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <div id="image02" class="image-component instance-2 style-1 full" data-position="center" style="opacity: 0;">
+                                <span class="frame">
+                                    <img src="image2.png" alt="">
+                                </span>
+                            </div>
+                            <h2 id="text11" class="text-component instance-11 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Balls</h2>
+                            <hr id="divider04" class="my-animated divider-component instance-4 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+                            <p id="text05" class="text-component instance-5 style-4" style="opacity: 0; transform: translateY(1.425rem);">
+                                <strong>
+                                    <span style="color: #ebc98f">Opis gry</span>
+                                </strong>
+                            </p>
+                            <p id="text12" class="text-component instance-12 style-3" style="opacity: 0; transform: translateY(1.425rem);">Gracz kontroluje przesuwaną ściankę, która oddziela dwa obszary. Wykorzystując tę ściankę z otworem, gracz ma za zadanie przesuwać piłki, które nieustannie przelatują przez otwór. Każda piłka ma przypisany kolor i musi wylądować w obszarze odpowiadającym jej kolorowi. W miarę postępów w grze tempo przyspiesza, a liczba piłek wzrasta, co wymaga szybszych reakcji i precyzyjnych ruchów.</p>
+                            <ul id="buttons01" class="buttons-component instance-1 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">narzędzia:</span> <br> Unity <br>OpenJDK<br> Android SDK & NDK Tools
+                                    </p>
+                                </li>
+                                <li style="width: 20%"></li>
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">rola:</span><br>
+                                        Programer
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul id="buttons06" class="buttons-component instance-6 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <a href="https://dmytrohavryliuk.itch.io/balls" class="n01" role="button">
+                                        <svg aria-labelledby="buttons06-icon-1-title">
+                                            <title id="buttons06-icon-1-title">Arrow Right (Light)</title>
+                                            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                        </svg>
+                                        <span class="label">Dowiedz się więcej</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<hr id="divider08" class="divider-component instance-8 style-2">-->
+                <div id="container05" class="container-component instance-5 style-2 default" style="margin-top: 100px !important">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <div id="image04" class="image-component instance-4 style-1 full" data-position="center" style="opacity: 0;">
+                                <span class="frame">
+                                    <img src="image3.png" alt="">
+                                </span>
+                            </div>
+                            <h2 id="text17" class="text-component instance-17 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Distribution Сenter</h2>
+                            <hr id="divider05" class="my-animated-revers divider-component instance-5 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+                            <p id="text10" class="text-component instance-10 style-4" style="opacity: 0; transform: translateY(1.425rem);">
+                                <strong>
+                                    <span style="color: #ebc98f">Opis gry</span>
+                                </strong>
+                            </p>
+                            <p id="text18" class="text-component instance-18 style-3" style="opacity: 0; transform: translateY(1.425rem);">Distribution Center to dynamiczna gra kooperacyjna, w której gracze wcielają się w rolę pracowników dużego magazynu. Twoim zadaniem jest rozładowywanie, sortowanie i wysyłanie paczek we właściwe miejsca, utrzymując porządek w coraz większym chaosie!</p>
+                            <ul id="buttons01" class="buttons-component instance-1 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">narzędzia:</span> <br>Unity <br>FishNet
+                                    </p>
+                                </li>
+                                <li style="width: 20%"></li>
+                                <li>
+                                    <p class="text-component instance-7 style-3" style="opacity: 0; transform: translateY(1.425rem);">
+                                        <span style="color: #ebc98f">rola:</span><br>
+                                        Programer
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul id="buttons04" class="buttons-component instance-4 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <a href="https://dmytrohavryliuk.itch.io/distributioncenter" class="n01" role="button">
+                                        <svg aria-labelledby="buttons04-icon-1-title">
+                                            <title id="buttons04-icon-1-title">Arrow Right (Light)</title>
+                                            <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
+                                        </svg>
+                                        <span class="label">Dowiedz się więcej</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--<hr id="divider09" class="divider-component instance-9 style-2">-->
+                <div id="container03" data-scroll-id="contact" class="container-component instance-3 style-2 default" style="margin-top: 100px !important">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <h2 id="text06" class="text-component instance-6 style-2" style="opacity: 0; transform: translateY(0.6375rem);">Skontaktuj się ze mną</h2>
+                            <hr id="divider03" class="my-animated divider-component instance-3 style-1 full screen" style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(-9deg);">
+                            <p id="text08" class="text-component instance-8 style-3" style="opacity: 0; transform: translateY(1.425rem);">.</p>
+                            <ul id="buttons05" class="buttons-component instance-5 style-1" style="opacity: 0; transform: translateY(1.6875rem);">
+                                <li>
+                                    <a href="mailto:dhavryliuk@edu.cdv.pl" class="n01" role="button">
+                                        <svg aria-labelledby="buttons05-icon-1-title">
+                                            <title id="buttons05-icon-1-title">Email (Alt)</title>
+                                            <use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
+                                        </svg>
+                                        <span class="label">Write a Mail</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="CV.pdf" class="n01" role="button">
+                                        <img src="cvIcon.png" style="max-block-size: 35px; transform: translate(25%`, 0)">
+                                        <span class="label">Get CV</span>
+                                        <!--<img style="max-width: 20px; height: auto; display:block" src="cvIcon.png">-->
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="container02" class="container-component instance-2 default">
+                    <div class="wrapper">
+                        <div class="inner" data-onvisible-trigger="1">
+                            <ul id="icons01" class="icons-component instance-1 style-1">
+                                <!--<li style="opacity: 0; transform: translateY(1.6875rem);">
+                        <a class="n01" href="https://dmytrohavryliuk.carrd.co/#" role="button">
+                            <svg aria-labelledby="icons01-icon-1-title">
+                                <title id="icons01-icon-1-title">X</title>
+                                <use xlink:href="#icon-31b8880d36499db40d4e47546c4763f3"></use>
+                            </svg>
+                            <span class="label">X</span>
+                        </a>
+                    </li>
+                    <li style="opacity: 0; transform: translateY(1.6875rem);">
+                        <a class="n02" href="https://dmytrohavryliuk.carrd.co/#" role="button">
+                            <svg aria-labelledby="icons01-icon-2-title">
+                                <title id="icons01-icon-2-title">Instagram</title>
+                                <use xlink:href="#icon-85976685de3e4af37529a1ce5d57d2a7"></use>
+                            </svg>
+                            <span class="label">Instagram</span>
+                        </a>
+                    </li>-->
+                                <li style="opacity: 0; transform: translateY(1.6875rem);">
+                                    <a class="n03" href="https://dmytrohavryliuk.carrd.co/#" role="button">
+                                        <svg aria-labelledby="icons01-icon-3-title">
+                                            <title id="icons01-icon-3-title">Facebook</title>
+                                            <use xlink:href="#icon-a1eb5cac0cee3b05a40d856c98ce14a5"></use>
+                                        </svg>
+                                        <span class="label">Facebook</span>
+                                    </a>
+                                </li>
+                                <li style="opacity: 0; transform: translateY(1.6875rem);">
+                                    <a class="n03" href="https://www.linkedin.com/in/dmytro-havryliuk/" role="button">
+                                        <img src="linkedin-logo.png" style="max-width: 1.6875rem">
+                                    </a>
+                                </li>
+                                <!--<li style="opacity: 0; transform: translateY(1.6875rem);">
+                        <a class="n04" href="https://dmytrohavryliuk.carrd.co/#" role="button">
+                            <svg aria-labelledby="icons01-icon-4-title">
+                                <title id="icons01-icon-4-title">TikTok</title>
+                                <use xlink:href="#icon-694b338299bf630d8d2ec9bd42d31dbe"></use>
+                            </svg>
+                            <span class="label">TikTok</span>
+                        </a>
+                    </li>-->
+                                <li style="opacity: 0; transform: translateY(1.6875rem);">
+                                    <a class="n05" href="sms:48507075278" role="button">
+                                        <svg aria-labelledby="icons01-icon-5-title">
+                                            <title id="icons01-icon-5-title">Message</title>
+                                            <use xlink:href="#icon-3dc53231f6592396154e494d0058130c"></use>
+                                        </svg>
+                                        <span class="label">Message</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--
+    <div id="credits">
+        <span>
+            <a href="https://carrd.co/build?ref=auto">Made with Carrd</a>
+        </span>
+    </div>-->
+            </div>
 		</div>
 	</div>
-	<script>
+    <script>
+        window.addEventListener("resize", function () {
+            var w = window.innerWidth;
+            console.log(w)
+            var responsiveDiv = document.querySelectorAll('.responsive');
+
+            responsiveDiv.forEach((element) => {
+                console.log(element)
+                if (w < 737) {
+                    element.classList.remove("sticky-element");
+                    element.classList.add("mobile");
+                    console.log("desktop Remove");
+                } else {
+                    element.classList.remove("mobile");
+                    element.classList.add("sticky-element");
+
+                    console.log("mobile removed");
+                }
+
+            })
+
+        });
+        var w = window.innerWidth;
+        console.log(w)
+        var responsiveDiv = document.querySelectorAll('.responsive');
+
+        responsiveDiv.forEach((element) => {
+            console.log(element)
+            if (w < 737) {
+                element.classList.remove("sticky-element");
+                element.classList.add("mobile");
+                console.log("desktop Remove");
+            } else {
+                element.classList.remove("mobile");
+                element.classList.add("sticky-element");
+
+                console.log("mobile removed");
+            }
+
+        })
+    </script>
+    <script>
+        const container = document.getElementById('image-container');
+        const images = container.querySelectorAll('.fade-img');
+        const button = document.getElementById('change-button');
+        let currentImageIndex = 0;
+
+        function changeImage() {
+            images[currentImageIndex].classList.remove('active');
+
+            // Переключаем индекс
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            // Добавляем класс 'active' к следующей картинке
+            images[currentImageIndex].classList.add('active');
+            container.style.height = images[currentImageIndex].height + "px";
+        }
+
+        button.addEventListener('click', changeImage);
+
+        changeImage();
+
+        let intervalID = setInterval(changeImage, 10000)
+
+        
+    </script>
+	<script>        
 		(function () {
 			var on = addEventListener,
 				off = removeEventListener,
